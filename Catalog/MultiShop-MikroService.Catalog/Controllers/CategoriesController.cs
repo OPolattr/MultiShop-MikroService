@@ -19,14 +19,14 @@ namespace MultiShop_MikroService.Catalog.Controllers
 		[HttpGet]
 		public async Task<IActionResult> CategoryList()
 		{
-			var values = _categoryService.GetAllCategoryAsync();
+			var values = await _categoryService.GetAllCategoryAsync();
 			return Ok(values);
 		}
 
 		[HttpGet("{id}")]
 		public async Task<IActionResult> GetCategoryById(string id)
 		{
-			var values = _categoryService.GetByIdCategoryAsync(id);
+			var values = await _categoryService.GetByIdCategoryAsync(id);
 			return Ok(values);
 		}
 
