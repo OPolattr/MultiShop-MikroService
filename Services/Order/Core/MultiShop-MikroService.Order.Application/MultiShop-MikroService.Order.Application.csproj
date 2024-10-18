@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Mediator\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MultiShop-MikroService.Order.Domain\MultiShop-MikroService.Order.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
