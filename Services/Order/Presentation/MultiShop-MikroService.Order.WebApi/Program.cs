@@ -2,9 +2,12 @@ using MultiShop_MikroService.Order.Application.Features.CQRS.Handlers.AddressHan
 using MultiShop_MikroService.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using MultiShop_MikroService.Order.Application.Interfaces;
 using MultiShop_MikroService.Order.Application.Services;
+using MultiShop_MikroService.Order.Persistence.Context;
 using MultiShop_MikroService.Order.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<OrderContext>();
 
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddApplicationService(builder.Configuration);

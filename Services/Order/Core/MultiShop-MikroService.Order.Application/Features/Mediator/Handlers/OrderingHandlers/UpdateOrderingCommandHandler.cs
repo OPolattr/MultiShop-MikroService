@@ -25,6 +25,7 @@ namespace MultiShop_MikroService.Order.Application.Features.Mediator.Handlers.Or
 			values.OrderDate = request.OrderDate;
 			values.UserId = request.UserId;
 			values.TotalPrice = request.TotalPrice;
+			await _repository.UpdateAsync(values);
 		}
 	}
 }
