@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\MultiShop-MikroService.Order.Application\MultiShop-MikroService.Order.Application.csproj" />
+    <ProjectReference Include="..\..\Core\MultiShop-MikroService.Order.Domain\MultiShop-MikroService.Order.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MultiShop-MikroService.Order.Persistence\MultiShop-MikroService.Order.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
