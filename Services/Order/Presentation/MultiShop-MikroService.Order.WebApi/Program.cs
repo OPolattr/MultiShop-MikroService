@@ -15,6 +15,8 @@ builder.Services.AddScoped<CreateOrderDetailCommandHandler>();
 builder.Services.AddScoped<UpdateOrderDetailCommandHandler>();
 builder.Services.AddScoped<RemoveOrderDetailCommandHandler>();
 
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();
