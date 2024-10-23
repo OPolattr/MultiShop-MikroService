@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop_MikroService.Catalog.Dtos.CategoryDtos;
 using MultiShop_MikroService.Catalog.Services.CategoryServices;
 
 namespace MultiShop_MikroService.Catalog.Controllers
 {
+	// []
+	[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class CategoriesController : ControllerBase

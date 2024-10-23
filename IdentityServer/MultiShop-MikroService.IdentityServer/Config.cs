@@ -50,7 +50,7 @@ namespace MultiShop_MikroService.IdentityServer
 				ClientName="Multi Shop Visitor User",
 				AllowedGrantTypes=GrantTypes.ClientCredentials,
 				ClientSecrets={new Secret("multishopsecret".Sha256())},
-				AllowedScopes={"CatalogReadPermission","CatalogFullPermission",  IdentityServerConstants.LocalApi.ScopeName }
+				AllowedScopes={"CatalogReadPermission","CatalogFullPermission"}
 			},
 
             //Manager
@@ -60,11 +60,7 @@ namespace MultiShop_MikroService.IdentityServer
 				ClientName="Multi Shop Manager User",
 				AllowedGrantTypes=GrantTypes.ClientCredentials,
 				ClientSecrets={new Secret("multishopsecret".Sha256()) },
-				AllowedScopes={ "CatalogReadPermission", "CatalogFullPermission",
-				IdentityServerConstants.LocalApi.ScopeName,
-				IdentityServerConstants.StandardScopes.Email,
-				IdentityServerConstants.StandardScopes.OpenId,
-				IdentityServerConstants.StandardScopes.Profile }
+				AllowedScopes={ "CatalogReadPermission", "CatalogFullPermission"}
 			},
 
             //Admin

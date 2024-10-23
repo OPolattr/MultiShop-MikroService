@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop_MikroService.Order.Application.Features.CQRS.Commands.AddressCommands;
 using MultiShop_MikroService.Order.Application.Features.CQRS.Commands.OrderDetailCommands;
@@ -9,6 +10,7 @@ using MultiShop_MikroService.Order.Application.Features.CQRS.Queries.OrderDetail
 
 namespace MultiShop_MikroService.Order.WebApi.Controllers
 {
+	[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class OrderDetailsController : ControllerBase
