@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop_MikroService.IdentityServer.Dtos;
 using MultiShop_MikroService.IdentityServer.Models;
 using System.Threading.Tasks;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace MultiShop_MikroService.IdentityServer.Controllers
 {
+	[Authorize(LocalApi.PolicyName)]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class RegistersController : ControllerBase
