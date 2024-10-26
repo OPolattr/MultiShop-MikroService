@@ -38,6 +38,7 @@ namespace MultiShop_MikroService.IdentityServer
 			new ApiScope("CatalogReadPermission","Reading authority for catalog operations"),
 			new ApiScope("DiscountFullPermission","Full authority for discount operations"),
 			new ApiScope("OrderFullPermisson","Full authority for order operations"),
+			new ApiScope("CargoFullPermisson","Full authority for cargo operations"),
 			new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 		};
 
@@ -70,7 +71,7 @@ namespace MultiShop_MikroService.IdentityServer
 				ClientName="Multi Shop Admin User",
 				AllowedGrantTypes=GrantTypes.ClientCredentials,
 				ClientSecrets={new Secret("multishopsecret".Sha256()) },
-				AllowedScopes={ "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermisson",
+				AllowedScopes={ "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermisson","CargoFullPermisson",
 				IdentityServerConstants.LocalApi.ScopeName,
 				IdentityServerConstants.StandardScopes.Email,
 				IdentityServerConstants.StandardScopes.OpenId,

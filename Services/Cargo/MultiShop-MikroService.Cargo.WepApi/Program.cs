@@ -1,4 +1,28 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using MultiShop_MikroService.Cargo.BusinessLayer.Abstract;
+using MultiShop_MikroService.Cargo.BusinessLayer.Concrete;
+using MultiShop_MikroService.Cargo.DataAccessLayer.Abstract;
+using MultiShop_MikroService.Cargo.DataAccessLayer.Concrete;
+using MultiShop_MikroService.Cargo.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+	opt.Authority = builder.Configuration["IdentityServerUrl"];
+	opt.Audience = "ResourceCargo";
+	opt.RequireHttpsMetadata = false;
+});
+
+builder.Services.AddDbContext<CargoContext>();
+builder.Services.AddScoped<ICargoCompanyDal, EfCargoCompanyDal>();
+builder.Services.AddScoped<ICargoCompanyService, CargoCompanyManager>();
+builder.Services.AddScoped<ICargoCustomerDal, EfCargoCustomerDal>();
+builder.Services.AddScoped<ICargoCustomerService, CargoCustomerManager>();
+builder.Services.AddScoped<ICargoDetailDal, EfCargoDetailDal>();
+builder.Services.AddScoped<ICargoDetailService, CargoDetailManager>();
+builder.Services.AddScoped<ICargoOperationDal, EfCargoOperationDal>();
+builder.Services.AddScoped<ICargoOperationService, CargoOperationManager>();
 
 // Add services to the container.
 
@@ -18,6 +42,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

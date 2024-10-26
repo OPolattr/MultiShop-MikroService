@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MultiShop-MikroService.Cargo.DataAccessLayer\MultiShop-MikroService.Cargo.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\MultiShop-MikroService.Cargo.EntityLayer\MultiShop-MikroService.Cargo.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
