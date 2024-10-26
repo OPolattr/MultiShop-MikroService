@@ -38,7 +38,13 @@ namespace MultiShop_MikroService.IdentityServer
 			new ApiScope("CatalogReadPermission","Reading authority for catalog operations"),
 			new ApiScope("DiscountFullPermission","Full authority for discount operations"),
 			new ApiScope("OrderFullPermisson","Full authority for order operations"),
-			new ApiScope("CargoFullPermisson","Full authority for cargo operations"),
+			new ApiScope("CargoFullPermission","Full authority for cargo operations"),
+			new ApiScope("BasketFullPermission","Full authority for basket operations"),
+			new ApiScope("CommentFullPermission","Full authority for comment operations"),
+			new ApiScope("PaymentFullPermission","Full authority for payment operations"),
+			new ApiScope("ImageFullPermission","Full authority for image operations"),
+			new ApiScope("OcelotFullPermission","Full authority for ocelot operations"),
+			new ApiScope("MessageFullPermission","Full authority for message operations"),
 			new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 		};
 
@@ -59,7 +65,7 @@ namespace MultiShop_MikroService.IdentityServer
 			{
 				ClientId="MultiShopManagerId",
 				ClientName="Multi Shop Manager User",
-				AllowedGrantTypes=GrantTypes.ClientCredentials,
+				AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
 				ClientSecrets={new Secret("multishopsecret".Sha256()) },
 				AllowedScopes={ "CatalogReadPermission", "CatalogFullPermission"}
 			},
@@ -69,9 +75,9 @@ namespace MultiShop_MikroService.IdentityServer
 			{
 				ClientId="MultiShopAdminId",
 				ClientName="Multi Shop Admin User",
-				AllowedGrantTypes=GrantTypes.ClientCredentials,
+				AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
 				ClientSecrets={new Secret("multishopsecret".Sha256()) },
-				AllowedScopes={ "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermisson","CargoFullPermisson",
+				AllowedScopes={ "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermisson","CargoFullPermission","BasketFullPermission",
 				IdentityServerConstants.LocalApi.ScopeName,
 				IdentityServerConstants.StandardScopes.Email,
 				IdentityServerConstants.StandardScopes.OpenId,
